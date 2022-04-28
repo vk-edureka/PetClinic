@@ -12,7 +12,7 @@
             echo "Deploying Petclinic Application"
             kubectl create deployment petclinic --image=ajdochb/petclinic:{{ build }}
          fi
-    - name: deploying service
+    - name: deploying kubernetes service
       shell: |
          if [ `kubectl get svc | grep petclinic  | awk '{print $1}' | wc -l` -gt 0 ]; then
             echo "app service found, No actions taken"
