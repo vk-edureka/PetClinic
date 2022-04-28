@@ -9,7 +9,7 @@
             echo "creating new application deployment"
             kubectl create deployment petclinic --image=ajdochb/petclinic:{{ build }}
          else 
-            echo "Deploying petclinic Application"
+            echo "Deploying Petclinic Application"
             kubectl create deployment petclinic --image=ajdochb/petclinic:{{ build }}
          fi
     - name: deploying service
