@@ -18,7 +18,7 @@
             echo "app service found, No actions taken"
             #kubectl delete svc `kubectl get svc | grep petclinic | awk '{print $1}'`
          else
-            echo "Creating Application Services"
+            echo "Creating App Services"
             kubectl expose deployment petclinic --name petclinic --type NodePort --port 80 --target-port 8080
          fi
     - name: increase replicas 
