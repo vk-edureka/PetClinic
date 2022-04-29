@@ -6,14 +6,14 @@ pipeline {
                 // step1 
                 echo 'compiling..'
 		            git url: 'https://github.com/lerndevops/PetClinic'
-		            sh script: '/opt/apache-maven-3.8.5/bin/mvn compile'
+		            sh script: 'mvn compile'
            }
         }
         stage('codereview-pmd') {
 	         steps {
                 // step2
                 echo 'codereview..'
-		            sh script: '/opt/apache-maven-3.8.5/bin/mvn -P metrics pmd:pmd'
+		            sh script: 'mvn -P metrics pmd:pmd'
            }
 	         post {
                success {
@@ -25,7 +25,7 @@ pipeline {
 	          steps {
                 // step3
                 echo 'unittest..'
-	               sh script: '/opt/apache-maven-3.8.5/bin/mvn test'
+	               sh script: 'mvn test'
             }
 	          post {
                success {
@@ -41,7 +41,7 @@ pipeline {
 	         steps {
                 // step4
                 echo 'codecoverage..'
-		            sh script: '/opt/apache-maven-3.8.5/bin/mvn cobertura:cobertura -Dcobertura.report.format=xml'
+		            sh script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
            }
 	         post {
                success {
