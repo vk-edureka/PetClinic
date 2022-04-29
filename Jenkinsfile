@@ -53,7 +53,7 @@ pipeline {
 	         steps {
                 // step5
                 echo 'package......'
-		            sh script: '/opt/apache-maven-3.8.5/bin/mvn package'	
+		            sh script: 'mvn package'	
            }		
         }
     }
